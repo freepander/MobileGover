@@ -85,6 +85,14 @@
 				</div>
 				<div class="row">
 					<div class="control-group span16">
+						<label class="control-label"><s>*</s>电话2：</label>
+						<div class="controls">
+							<input name="telphone2" value="<s:property value="people.telphone2"/>" type="text" class="input-normal control-text">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="control-group span16">
 						<label class="control-label"><s>*</s>住宅电话：</label>
 						<div class="controls">
 							<input name="residential" value="<s:property value="people.residential"/>" type="text" class="input-normal control-text">

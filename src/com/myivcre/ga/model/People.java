@@ -33,11 +33,23 @@ public class People {
 	private boolean sex;
 	//电话
 	private String telphone;
+	//第二个电话
+	private String telphone2;
 	//地址
 	private String address;
+	//用户名
+	private String username;
+	//密码
+	private String password;
 	
 	public int getId() {
 		return id;
+	}
+	public String getTelphone2() {
+		return telphone2;
+	}
+	public void setTelphone2(String telphone2) {
+		this.telphone2 = telphone2;
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -101,6 +113,18 @@ public class People {
 	}
 	public void setResidential(String residential) {
 		this.residential = residential;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

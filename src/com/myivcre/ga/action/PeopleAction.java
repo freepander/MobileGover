@@ -19,6 +19,7 @@ public class PeopleAction extends BaseAction {
 	private String residential;
 	private boolean sex;
 	private String telphone;
+	private String telphone2;
 	private String address;
 	
 	private People people;
@@ -51,6 +52,7 @@ public class PeopleAction extends BaseAction {
 		this.people.setSex(sex);
 		this.people.setTelphone(this.telphone);
 		this.people.setAddress(address);
+		this.people.setTelphone2(telphone2);
 		this.baseService.update(this.people);
 		return "list";
 	}
@@ -67,6 +69,7 @@ public class PeopleAction extends BaseAction {
 		this.people.setSex(sex);
 		this.people.setTelphone(this.telphone);
 		this.people.setAddress(address);
+		this.people.setTelphone2(telphone2);
 		this.baseService.save(this.people);
 		return "list";
 	}
@@ -137,6 +140,17 @@ public class PeopleAction extends BaseAction {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+	public String getTelphone2() {
+		return telphone2;
+	}
+	public void setTelphone2(String telphone2) {
+		this.telphone2 = telphone2;
+	}
+	public People getPeople() {
+		return people;
+	}
+	public void setPeople(People people) {
+		this.people = people;
+	}
 
 }
