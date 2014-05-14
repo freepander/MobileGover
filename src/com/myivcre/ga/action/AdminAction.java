@@ -17,6 +17,7 @@ import com.myivcre.ga.model.Admin;
 @Component("adminAction")
 @Scope("prototype")
 public class AdminAction extends BaseAction {
+	
 	private String username;
 	private String password;
 	private String name;
@@ -36,10 +37,8 @@ public class AdminAction extends BaseAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("进入了action");
 		//判断用户是否存在
 		if(pageModel!=null&&pageModel.getObjects().size()>0){
-			System.out.println("进入了if循环");
 			this.admin=(Admin)this.pageModel.getObjects().get(0);
 			HttpServletRequest request = ServletActionContext.getRequest();
 			HttpSession session=request.getSession();
@@ -49,6 +48,30 @@ public class AdminAction extends BaseAction {
 		}
 		return "login";
 		
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Admin getAdmin() {
+		return admin;
+	}
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
 	}
 	
 }

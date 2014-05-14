@@ -10,11 +10,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="<%=basePath%>">
 <meta charset="utf-8">
 <title>富锦市手机政务后台管理系统-登录</title>
-<link rel="stylesheet" href="back/assets/css/bui-min.css" type="text/css"></link>
-<link rel="stylesheet" href="back/assets/css/dpl-min.css" type="text/css"></link></head>
+<link rel="stylesheet" href="assets/css/bui-min.css" type="text/css"></link>
+<link rel="stylesheet" href="assets/css/dpl-min.css" type="text/css"></link></head>
 <body>
 <div class="container" style="margin-top: 100px;">
-	<form action="curl/admin_login" method="post" style="text-align: center;">
+	<form action="app/admin_login" method="post" style="text-align: center;">
     	<legend>富锦市手机政务后台管理系统</legend>
     	<div class="control-group">
     		<label class="control-label">用户名:</label>

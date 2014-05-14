@@ -21,7 +21,6 @@ public class PeopleAction extends BaseAction {
 	private String telphone;
 	private String telphone2;
 	private String address;
-	
 	private People people;
 	
 	public String list(){
@@ -70,6 +69,7 @@ public class PeopleAction extends BaseAction {
 		this.people.setTelphone(this.telphone);
 		this.people.setAddress(address);
 		this.people.setTelphone2(telphone2);
+		this.people.setPassword("111111");
 		this.baseService.save(this.people);
 		return "list";
 	}
