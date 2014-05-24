@@ -41,7 +41,9 @@ public class People {
 	private String username;
 	//密码
 	private String password;
-	
+	//用于通信的连个id
+	private String userid="0";
+	private String channelid="0";
 	public int getId() {
 		return id;
 	}
@@ -125,6 +127,18 @@ public class People {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public String getChannelid() {
+		return channelid;
+	}
+	public void setChannelid(String channelid) {
+		this.channelid = channelid;
 	}
 	
 	
