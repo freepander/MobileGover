@@ -229,6 +229,22 @@ public class AppAction extends BaseAction {
 		}
 		return null;
 	}
+	public String getPeopleById(){
+		People p=(People)this.baseService.get(People.class, id);
+		PeopleChat pc=new PeopleChat();
+		pc.setChannelid(p.getChannelid());
+		pc.setId(p.getId());
+		pc.setUserid(p.getUserid());
+		String s=JSON.toJSONString(pc,true);
+		HttpServletResponse response=ServletActionContext.getResponse();
+		try {
+			response.setCharacterEncoding("GBK");
+			response.getWriter().print(s);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	public String getChannelid(){
 		People p=(People)this.baseService.get(People.class, id);
 		PrintWriter out = null;

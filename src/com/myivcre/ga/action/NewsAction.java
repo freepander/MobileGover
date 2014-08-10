@@ -1,10 +1,11 @@
 package com.myivcre.ga.action;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -29,14 +30,12 @@ public class NewsAction extends BaseAction {
 			orderby.add("id desc");
 			this.pageModel=this.baseService.getPageModel("news", 1, 20, orderby, q, a);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.pageModel.setUrl("curl/news_list?pageNum=");
 		return "success";
 	}
-	public String add(){
-		System.out.println(title);
+	public String add() throws IOException{
 		this.news=new News();
 		this.news.setTitle(title);
 		this.news.setDate(date);
@@ -221,6 +220,6 @@ public class NewsAction extends BaseAction {
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
-	
+
 
 }

@@ -20,6 +20,7 @@
 	<div class="container">
 		<div class="row">
 			<form action="curl/people_<s:if test="id==0" >add</s:if><s:if test="id!=0">update</s:if>" class="form-horizontal span24">
+				<input type="hidden" value="<s:property value="people.id" />" name="id">
 				<div class="row">
 					<div class="control-group span16">
 						<label class="control-label"><s>*</s>姓名：</label>
@@ -88,6 +89,14 @@
 						<label class="control-label"><s>*</s>电话2：</label>
 						<div class="controls">
 							<input name="telphone2" value="<s:property value="people.telphone2"/>" type="text" class="input-normal control-text">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="control-group span16">
+						<label class="control-label"><s>*</s>邮箱：</label>
+						<div class="controls">
+							<input name="email" value="<s:property value="people.email"/>" type="text" class="input-normal control-text">
 						</div>
 					</div>
 				</div>

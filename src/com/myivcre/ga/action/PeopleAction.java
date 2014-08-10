@@ -22,7 +22,7 @@ public class PeopleAction extends BaseAction {
 	private String telphone2;
 	private String address;
 	private People people;
-	
+	private String email;
 	public String list(){
 		orderby.add("id desc");
 		try {
@@ -52,6 +52,7 @@ public class PeopleAction extends BaseAction {
 		this.people.setTelphone(this.telphone);
 		this.people.setAddress(address);
 		this.people.setTelphone2(telphone2);
+		this.people.setEmail(email);
 		this.baseService.update(this.people);
 		return "list";
 	}
@@ -70,6 +71,7 @@ public class PeopleAction extends BaseAction {
 		this.people.setAddress(address);
 		this.people.setTelphone2(telphone2);
 		this.people.setPassword("111111");
+		this.people.setEmail(email);
 		this.baseService.save(this.people);
 		return "list";
 	}
@@ -112,6 +114,12 @@ public class PeopleAction extends BaseAction {
 	}
 	public String getOfficeTelphone() {
 		return officeTelphone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public void setOfficeTelphone(String officeTelphone) {
 		this.officeTelphone = officeTelphone;

@@ -44,6 +44,9 @@ public class People {
 	//用于通信的连个id
 	private String userid="0";
 	private String channelid="0";
+	//邮箱
+	private String email;
+	
 	public int getId() {
 		return id;
 	}
@@ -109,6 +112,12 @@ public class People {
 	}
 	public void setOfficeTelphone(String officeTelphone) {
 		this.officeTelphone = officeTelphone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getResidential() {
 		return residential;
