@@ -29,6 +29,14 @@
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="control-group span16">
+						<label class="control-label"><s>*</s>机排序值：</label>
+						<div class="controls">
+							<input name="orderNumber" value="<s:property value="organization.orderNumber"/>" type="text" class="input-normal control-text">
+						</div>
+					</div>
+				</div>
 				
 				<div class="row">
 					<div class="control-group span15">

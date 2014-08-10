@@ -46,7 +46,8 @@ public class People {
 	private String channelid="0";
 	//邮箱
 	private String email;
-	
+	// 排序值
+	private int orderNumber;
 	public int getId() {
 		return id;
 	}
@@ -148,6 +149,12 @@ public class People {
 	}
 	public void setChannelid(String channelid) {
 		this.channelid = channelid;
+	}
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(int orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 	
 	

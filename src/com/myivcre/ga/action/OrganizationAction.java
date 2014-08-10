@@ -15,9 +15,12 @@ public class OrganizationAction extends BaseAction {
 	private String remarks;
 	private List<City> cityList;
 	private Organization organization;
+	
+	private int orderNumber = 100;
 	public String list(){
 		try{
-			this.pageModel=this.baseService.getPageModel("organization", pageNum, 20);
+			orderby.add("orderNumber desc");
+			this.pageModel = this.baseService.getPageModel("organization", pageNum, 100, orderby);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -37,6 +40,7 @@ public class OrganizationAction extends BaseAction {
 		this.organization=new Organization();
 		this.organization.setName(name);
 		this.organization.setRemarks(remarks);
+		this.organization.setOrderNumber(orderNumber);
 		this.baseService.save(this.organization);
 		return "list";
 	}
@@ -44,6 +48,7 @@ public class OrganizationAction extends BaseAction {
 		this.organization=(Organization) this.baseService.get(Organization.class, id);
 		this.organization.setName(name);
 		this.organization.setRemarks(remarks);
+		this.organization.setOrderNumber(orderNumber);
 		this.baseService.update(this.organization);
 		return "list";
 	}
@@ -75,4 +80,11 @@ public class OrganizationAction extends BaseAction {
 	public void setOrganization(Organization organization) {
 		this.organization = organization;
 	}
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(int orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+	
 }

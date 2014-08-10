@@ -18,6 +18,8 @@ public class Department {
 	@ManyToOne
 	private Organization organization;
 	private String remarks;
+	
+	private int orderNumber;
 	public int getId() {
 		return id;
 	}
@@ -41,6 +43,12 @@ public class Department {
 	}
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
+	}
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(int orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 	
 }

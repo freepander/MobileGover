@@ -16,8 +16,11 @@ public class DepartmentAction extends BaseAction {
 	private int organizationId;
 	private List<Organization> organizationList;
 	private Department department;
+	
+	private int orderNumber = 100;
 	public String list(){
-		this.list=this.baseService.getByHal("from department");
+		
+		this.list=this.baseService.getByHal("from department order by orderNumber desc");
 		return "success";
 	}
 	public String input(){
@@ -34,6 +37,7 @@ public class DepartmentAction extends BaseAction {
 		this.department=new Department();
 		this.department.setName(name);
 		this.department.setRemarks(remarks);
+		this.department.setOrderNumber(orderNumber);
 		Organization organization =(Organization)this.baseService.get(Organization.class, organizationId);
 		this.department.setOrganization(organization);
 		this.baseService.save(this.department);
@@ -43,6 +47,7 @@ public class DepartmentAction extends BaseAction {
 		this.department=(Department) this.baseService.get(Department.class, id);
 		this.department.setName(name);
 		this.department.setRemarks(remarks);
+		this.department.setOrderNumber(orderNumber);
 		Organization organization =(Organization)this.baseService.get(Organization.class, organizationId);
 		this.department.setOrganization(organization);
 		this.baseService.update(this.department);
@@ -77,6 +82,12 @@ public class DepartmentAction extends BaseAction {
 	public List<Organization> getOrganizationList() {
 		return organizationList;
 	}
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(int orderNumber) {
+		this.orderNumber = orderNumber;
+	}
 	public void setOrganizationList(List<Organization> organizationList) {
 		this.organizationList = organizationList;
 	}
@@ -86,5 +97,6 @@ public class DepartmentAction extends BaseAction {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
+	
 	
 }

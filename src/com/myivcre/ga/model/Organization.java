@@ -15,6 +15,9 @@ public class Organization {
 	private int id;
 	private String name;
 	private String remarks;
+	
+	private int orderNumber = 100;
+	
 	public int getId() {
 		return id;
 	}
@@ -33,4 +36,11 @@ public class Organization {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(int orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+	
 }

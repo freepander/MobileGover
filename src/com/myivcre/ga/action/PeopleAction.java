@@ -23,10 +23,13 @@ public class PeopleAction extends BaseAction {
 	private String address;
 	private People people;
 	private String email;
+	
+	private int orderNumber = 100;
 	public String list(){
+		orderby.add("orderNumber desc");
 		orderby.add("id desc");
 		try {
-			this.pageModel=this.baseService.getPageModel("people", pageNum, 40, orderby, q, a);
+			this.pageModel=this.baseService.getPageModel("people", pageNum, 1000, orderby, q, a);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,6 +56,7 @@ public class PeopleAction extends BaseAction {
 		this.people.setAddress(address);
 		this.people.setTelphone2(telphone2);
 		this.people.setEmail(email);
+		this.people.setOrderNumber(orderNumber);
 		this.baseService.update(this.people);
 		return "list";
 	}
@@ -72,6 +76,7 @@ public class PeopleAction extends BaseAction {
 		this.people.setTelphone2(telphone2);
 		this.people.setPassword("111111");
 		this.people.setEmail(email);
+		this.people.setOrderNumber(orderNumber);
 		this.baseService.save(this.people);
 		return "list";
 	}
@@ -159,6 +164,12 @@ public class PeopleAction extends BaseAction {
 	}
 	public void setPeople(People people) {
 		this.people = people;
+	}
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(int orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 
 }
